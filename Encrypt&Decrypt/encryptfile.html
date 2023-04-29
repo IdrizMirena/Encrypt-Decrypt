@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS KONEKTOJME -->
+    <link rel="stylesheet" href="style.css">
+    <!-- TITULLI I PROJEKTIT -->
+    <title>PROJECT STI</title>
+</head>
+<body>
+  <!-- HAPIM SCRIPTEN E JS-->
+    <script>
+// Po deklaroj nje ndryshore te quajtur encodedString
+var encodedString;
+
+// Tani po percaktoj nje funksion me emrin encrypt
+function encrypt() {
+  // Ktu permes html ne js prej ID merr elementin hyrs
+  var baseString=document.getElementById("en").value;
+  
+  // Duke perdor funksionin btoa ne basestring kodojme basestring
+  encodedString=window.btoa(baseString);
+  
+  // Vendosim vleren hyrse duke perdorur ID (de) te qiky encdoeStringi
+  document.getElementById("de").value=encodedString;
+}
+
+// Tash deklarojme funksionin decryptus
+function decrypt() {
+  // Pemes atobit JS funksionit kodojme pjesen dhe e rujm ne decodedString
+  var decodeedString=window.atob(encodedString);
+  
+  // Vendosim elementin hyrs te ID (de) tek decodedStringi
+  document.getElementById("de").value=decodeedString;
+}
+
+    </script>
+    <!-- Mbyllim scripten e JS-->
+
+    <!-- Jepim strukturen e formave -->
+    <input type="text" id="en">
+    <br>
+    <input type="text" id="de">
+    <br>
+    <button onclick="encrypt()">Encrypt</button>
+    <br>
+    <button onclick="decrypt()">Decrypt</button>
+
+</body>
+</html>
